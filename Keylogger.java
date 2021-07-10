@@ -5,8 +5,8 @@ import org.jnativehook.NativeHookException;
 import org.jnativehook.keyboard.NativeKeyEvent;
 import org.jnativehook.keyboard.NativeKeyListener;
 
-/**
- * @author javaQuery
+/*
+ * @author Kunal
  * Global Keyboard Listener
  */
 public class Keylogger implements NativeKeyListener {
@@ -32,12 +32,12 @@ public class Keylogger implements NativeKeyListener {
 
     /* Key Released */
     public void nativeKeyReleased(NativeKeyEvent e) {
-        //System.out.println("Key Released: " + NativeKeyEvent.getKeyText(e.getKeyCode()));
+        System.out.println("Key Released: " + NativeKeyEvent.getKeyText(e.getKeyCode()));
     }
 
     /* I can't find any output from this call */
     public void nativeKeyTyped(NativeKeyEvent e) {
-    // System.out.println("Key Typed: " + e.getKeyText(e.getKeyCode()));
+     System.out.println("Key Typed: " + e.getKeyText(e.getKeyCode()));
      
      
      
@@ -50,8 +50,8 @@ public class Keylogger implements NativeKeyListener {
             GlobalScreen.registerNativeHook();
         } catch (NativeHookException ex) {
             /* Its error */
-            //System.err.println("There was a problem registering the native hook.");
-            //System.err.println(ex.getMessage());
+            System.err.println("There was a problem registering the native hook.");
+            System.err.println(ex.getMessage());
             System.exit(1);
         }
 
